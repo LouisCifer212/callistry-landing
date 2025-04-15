@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Callistry AI - Provala Ora</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     body {
       margin: 0;
@@ -103,6 +104,85 @@
     <tr><td>Chiamate/Giorno</td><td>300+</td><td>30</td><td>10–15</td></tr>
   </table>
 </section>
+
+<section>
+  <h2>🎬 Guarda come funziona</h2>
+  <div class="box">
+    <iframe src="https://www.loom.com/embed/your-video-id" width="100%" height="400" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>💡 Feature, Vantaggi & Bonus</h2>
+  <ul>
+    <li>✅ Voce realistica con latenza impercettibile</li>
+    <li>✅ Obiezioni gestite in automatico</li>
+    <li>✅ Integrazione diretta con il tuo CRM</li>
+    <li>✅ Call recording + trascrizione automatica</li>
+    <li>🎁 Bonus: Setup gratuito incluso</li>
+    <li>🎁 Bonus: Strategia su misura per la tua agenzia (valore AED 2,000)</li>
+  </ul>
+</section>
+
+<section id="try-me">
+  <h2>🚀 Prova Callistry AI Ora</h2>
+  <p>Inserisci i tuoi dati: riceverai subito una chiamata dell’AI per provarla in tempo reale.</p>
+  <div class="box">
+    <iframe
+      src="https://login.1stisland.com/widget/form/pdxtgk1MXFpjV7MHITO2"
+      style="width:100%; height: 730px;"
+      title="Callistry AI Test Form"></iframe>
+    <script src="https://login.1stisland.com/js/form_embed.js"></script>
+  </div>
+  <div id="call-confirmation" style="display:none; margin-top: 30px; text-align: center; color: #00ffae; font-weight: bold; font-size: 1.2rem;">
+    📞 Sta arrivando la tua chiamata... Rispondi per sentire l’AI in azione!
+  </div>
+</section>
+
+<section id="booking">
+  <h2>📅 Prenota la tua demo gratuita</h2>
+  <p>Parla con un esperto Callistry. Ti mostriamo tutto in 10 minuti.</p>
+  <div style="text-align:center;">
+    <a href="https://login.1stisland.com/widget/booking/sM8zFmd9I49UG5mBiixC" class="btn btn-secondary">Prenota Demo Ora</a>
+  </div>
+</section>
+
+<section>
+  <h2>🔥 Pronto a dominare il mercato?</h2>
+  <p>Callistry AI lavora 24/7 per la tua agenzia. Inizia oggi e trasforma ogni chiamata persa in una vendita chiusa.</p>
+  <div style="text-align:center;">
+    <a href="https://login.1stisland.com/payment-link/67c14fd9156a775b216e55d3" class="btn">🚀 Attiva ora</a>
+  </div>
+</section>
+
+<footer style="text-align: center; padding: 40px 20px; color: #ccc;">
+  <p>© 2025 Callistry AI – Powered by First Island</p>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const iframe = document.querySelector("iframe[src*='form']");
+    const confirmation = document.getElementById("call-confirmation");
+
+    if (iframe && confirmation) {
+      const observer = new MutationObserver(() => {
+        const thankYou = iframe.contentWindow?.document.querySelector(".gform_thankyou_message");
+        if (thankYou) {
+          confirmation.style.display = "block";
+          observer.disconnect();
+        }
+      });
+
+      iframe.addEventListener("load", () => {
+        try {
+          observer.observe(iframe.contentDocument.body, { childList: true, subtree: true });
+        } catch (e) {
+          setTimeout(() => { confirmation.style.display = "block"; }, 1500);
+        }
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
