@@ -6,25 +6,23 @@
   <title>Callistry AI - Provalo Ora</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       background: linear-gradient(135deg, #1e1e82, #5e2d91);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
       position: relative;
       overflow-x: hidden;
+      background-attachment: fixed;
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
     }
     body::before {
       content: "";
       position: fixed;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
       background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 60%);
       animation: glowmove 12s infinite linear;
       z-index: -1;
@@ -34,8 +32,7 @@
       100% { transform: rotate(360deg); }
     }
     nav {
-      position: sticky;
-      top: 0;
+      position: sticky; top: 0;
       background-color: rgba(13, 14, 27, 0.9);
       padding: 10px 20px;
       z-index: 1000;
@@ -49,9 +46,7 @@
       font-weight: bold;
       transition: color 0.3s;
     }
-    nav a:hover {
-      color: #ffffff;
-    }
+    nav a:hover { color: #ffffff; }
     section {
       padding: 60px 20px;
       max-width: 960px;
@@ -109,26 +104,21 @@
       border-radius: 20px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     }
-    .image-glow {
-      display: block;
-      margin: 20px auto;
-      width: 100%;
-      max-width: 600px;
-      border-radius: 20px;
-      box-shadow: 0 0 40px rgba(255,255,255,0.15);
-    }
     table {
-      margin-top: 30px;
       width: 100%;
       border-collapse: collapse;
+      margin-top: 30px;
     }
-    table th, table td {
+    th, td {
       padding: 12px;
       border: 1px solid rgba(255,255,255,0.2);
     }
-    table th {
+    th {
       background-color: rgba(255,255,255,0.1);
       color: #f6ba02;
+    }
+    tr:hover td {
+      background-color: rgba(255, 255, 255, 0.07);
     }
     iframe {
       border: none;
@@ -136,9 +126,63 @@
       width: 100%;
       max-width: 100%;
     }
-  </style>
+  .feature-box {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  .feature-box:nth-child(1) { animation-delay: 0.1s; }
+  .feature-box:nth-child(2) { animation-delay: 0.2s; }
+  .feature-box:nth-child(3) { animation-delay: 0.3s; }
+  .feature-box:nth-child(4) { animation-delay: 0.4s; }
+  .feature-box:nth-child(5) { animation-delay: 0.5s; }
+  .feature-box:nth-child(6) { animation-delay: 0.6s; }
+  .feature-box:nth-child(7) { animation-delay: 0.7s; }
+  .feature-box:nth-child(8) { animation-delay: 0.8s; }
+  .feature-box:nth-child(9) { animation-delay: 0.9s; }
+  .feature-box:nth-child(10) { animation-delay: 1s; }
+  .feature-box:nth-child(11) { animation-delay: 1.1s; }
+  .feature-box:nth-child(12) { animation-delay: 1.2s; }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+</style>
+<style>
+  .particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    animation: floatParticle 20s linear infinite;
+  }
+  @keyframes floatParticle {
+    0% { transform: translateY(0) scale(1); opacity: 0.2; }
+    50% { transform: translateY(-100vh) scale(1.2); opacity: 0.6; }
+    100% { transform: translateY(0) scale(1); opacity: 0.2; }
+  }
+</style>
 </head>
 <body>
+<div id="particles-container"></div>
+<script>
+  const container = document.getElementById("particles-container");
+  for (let i = 0; i < 50; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("particle");
+    dot.style.left = Math.random() * 100 + "vw";
+    dot.style.top = Math.random() * 100 + "vh";
+    dot.style.animationDelay = (Math.random() * 20) + "s";
+    dot.style.width = dot.style.height = (Math.random() * 4 + 2) + "px";
+    container.appendChild(dot);
+  }
+</script>
 
 <nav>
   <a href="#">Home</a>
@@ -181,7 +225,7 @@
     <li>✅ Integrazione diretta con il tuo CRM</li>
     <li>✅ Call recording + trascrizione automatica</li>
     <li>🎁 Bonus: Setup gratuito</li>
-    <li>🎁 Bonus: Strategia personalizzata (valore AED 30,000)</li>
+    <li>🎁 Bonus: Strategia personalizzata (valore 8000E )</li>
   </ul>
 </section>
 
@@ -192,6 +236,124 @@
     <iframe src="https://login.1stisland.com/widget/form/pdxtgk1MXFpjV7MHITO2" height="730"></iframe>
     <script src="https://login.1stisland.com/js/form_embed.js"></script>
   </div>
+</section>
+
+<section>
+  <h2>🤖 Cos'è Callistry AI?</h2>
+  <p>Callistry è il tuo assistente virtuale che effettua chiamate per conto della tua agenzia immobiliare, qualificando i lead, gestendo le obiezioni e fissando appuntamenti direttamente sul tuo calendario — tutto in automatico, 24/7.</p>
+  <p>È come avere il tuo miglior venditore al telefono… che non si ferma mai.</p>
+</section>
+
+<section>
+  <h2>⚖️ Callistry vs Altre Soluzioni</h2>
+  <div style="overflow-x:auto">
+    <table style="width:100%; border-collapse: collapse; background-color: rgba(255,255,255,0.05); border-radius: 12px;">
+      <thead style="background-color: rgba(255,255,255,0.1);">
+        <tr>
+          <th style="padding:12px; text-align:left; color:#f6ba02;">Caratteristiche</th>
+          <th style="padding:12px;">Callistry AI</th>
+          <th style="padding:12px;">CRM con reminder</th>
+          <th style="padding:12px;">Assistente umano</th>
+          <th style="padding:12px;">Sales Rep</th>
+          <th style="padding:12px;">AI Chatbot</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:12px;">Chiamate automatiche</td>
+          <td style="text-align:center;">✅</td>
+          <td style="text-align:center;">❌</td>
+          <td style="text-align:center;">❌</td>
+          <td style="text-align:center;">❌</td>
+          <td style="text-align:center;">❌</td>
+        </tr>
+        <tr>
+          <td style="padding:12px;">Obiezioni gestite</td>
+          <td style="text-align:center;">✅</td>
+          <td style="text-align:center;">❌</td>
+          <td style="text-align:center;">❌</td>
+          <td style="text-align:center;">✔️</td>
+          <td style="text-align:center;">⚠️ Solo testuali</td>
+        </tr>
+        <tr>
+          <td style="padding:12px;">Disponibilità 24/7</td>
+          <td style="text-align:center;">✅</td>
+          <td style="text-align:center;">❌</td>
+          <td style="text-align:center;">❌</td>
+          <td style="text-align:center;">❌</td>
+          <td style="text-align:center;">✅</td>
+        </tr>
+        <tr>
+          <td style="padding:12px;">Costo mensile</td>
+          <td style="text-align:center;">Basso, fisso</td>
+          <td style="text-align:center;">Medio</td>
+          <td style="text-align:center;">Alto</td>
+          <td style="text-align:center;">% commissioni</td>
+          <td style="text-align:center;">Basso</td>
+        </tr>
+        <tr>
+          <td style="padding:12px;">Performance stabile</td>
+          <td style="text-align:center;">✅</td>
+          <td style="text-align:center;">⚠️</td>
+          <td style="text-align:center;">⚠️</td>
+          <td style="text-align:center;">❌</td>
+          <td style="text-align:center;">⚠️ Limitata a testuale</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>🧰 Funzionalità incluse</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+    <div class="feature-box">✅ Agenti vocali illimitati</div>
+    <div class="feature-box">✅ 56 voci ultra-realistiche</div>
+    <div class="feature-box">✅ LLM multimodale (voce + comprensione del linguaggio)</div>
+    <div class="feature-box">✅ Chiamate inbound e outbound</div>
+    <div class="feature-box">✅ Registrazione e trascrizione delle chiamate</div>
+    <div class="feature-box">✅ Prenotazione automatica degli appuntamenti</div>
+    <div class="feature-box">✅ Rilevamento gratuito della segreteria telefonica</div>
+    <div class="feature-box">✅ Chiamate di consulenza one-to-one</div>
+    <div class="feature-box">✅ Integrazioni con API e Webhook</div>
+    <div class="feature-box">✅ Clonazione voce personalizzata (su richiesta)</div>
+  </div>
+</section>
+<style>
+  .feature-box {
+    flex: 1 1 28%;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    font-weight: bold;
+    transition: transform 0.4s, box-shadow 0.4s;
+    text-align: center;
+    min-width: 200px;
+  }
+  .feature-box:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 25px rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
+  }
+</style>
+
+<section>
+  <h2>❓ Domande Frequenti (FAQ)</h2>
+  <div class="box">
+    <p><strong>Quanto è realistica la voce?</strong><br>Molto. Puoi scegliere tra oltre 56 voci realistiche, maschili e femminili, con accenti diversi. Su richiesta, possiamo anche clonare la voce tua o del tuo top performer per renderla unica.</p>
+    <p><strong>L'AI può gestire più lingue?</strong><br>Sì, supporta più lingue grazie all'integrazione con modelli multimodali.</p>
+    <p><strong>Posso ricevere le registrazioni delle chiamate?</strong><br>Assolutamente. Ogni chiamata viene registrata e trascritta automaticamente.</p>
+    <p><strong>Serve installare qualcosa?</strong><br>No, tutto funziona via cloud. Puoi attivare e gestire Callistry dalla tua dashboard.</p>
+    <p><strong>Come funziona la prenotazione appuntamenti?</strong><br>L'AI verifica la disponibilità sul tuo calendario e prenota in autonomia.</p>
+  </div>
+</section>
+  
+<section>
+  <h2>⏳ Cosa ci fai qui sotto?</h2>
+  <p>Non rimandare. Il momento di rivoluzionare la tua agenzia è adesso.</p>
+  <p><strong>Prenota subito la tua demo gratuita oppure attiva Callistry con un solo clic.</strong></p>
+<p style="font-size:2rem">👇👇👇</p>
 </section>
 
 <section id="booking">
