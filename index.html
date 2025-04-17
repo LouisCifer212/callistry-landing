@@ -76,7 +76,7 @@
   </div>
 </section>
 
- <section class="section" id="try">
+<section class="section" id="try">
   <h2>🚀 Provalo Subito</h2>
   <p>Inserisci i tuoi dati per ricevere una chiamata demo dell’AI in tempo reale.</p>
   <div style="text-align:center;">
@@ -84,13 +84,21 @@
       id="callistry-form"
       src="https://login.1stisland.com/widget/form/pdxtgk1MXFpjV7MHITO2"
       loading="lazy"
-      style="width:100%; max-width:600px; border:none; overflow:hidden;">
-    </iframe>
-    <script src="https://login.1stisland.com/js/form_embed.js"></script>
+      style="width:100%; max-width:600px; border:none; overflow:hidden;"
+    ></iframe>
   </div>
 </section>
 
-
+<script>
+  // Carica dinamicamente il form_embed.js solo quando l'iframe è pronto
+  const iframe = document.getElementById('callistry-form');
+  iframe.addEventListener('load', () => {
+    const s = document.createElement('script');
+    s.src = 'https://login.1stisland.com/js/form_embed.js';
+    s.async = true;
+    document.body.appendChild(s);
+  });
+</script>
 
   <section>
   <h2>⚖️ Callistry vs Altre Soluzioni</h2>
