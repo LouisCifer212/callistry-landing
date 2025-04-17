@@ -56,6 +56,9 @@
       75% { transform: translateX(-25%); }
       100% { transform: translateX(1); }
     }
+     nav { position: sticky; top: 0; background-color: rgba(13,14,27,0.9); padding:10px 20px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.4); z-index:1000; }
+    nav a { color:#f6ba02; margin:0 15px; text-decoration:none; font-weight:bold; transition: color .3s; }
+    nav a:hover { color:#fff; }
     h1, h2, h3, p {
       text-align: center;
     }
@@ -385,6 +388,13 @@
   <div class="wave"></div>
   <div class="wave"></div>
 
+<nav>
+    <a href="#">Home</a>
+    <a href="#try">Provalo Ora</a>
+    <a href="#demo">Prenota Demo</a>
+    <a href="https://app.callistry.app/login">Login</a>
+  </nav>
+  
   <section class="section">
 <h1 style="font-size: 3rem; color: #f6ba02; text-align: center;">Callistry AI: L’assistente che chiama per te</h1>
     <p style="font-size: 2rem; color: #f6ba02; text-align: center;">Ogni chiamata persa è un'opportunità mancata.</p>
