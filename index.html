@@ -381,6 +381,37 @@
   border:1px solid rgba(255,0,88,0.4);
   box-shadow:0 1px 15px rgba(1,1,1,0.2);
 }
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: auto;        /* lascia che la tabella abbia larghezza automatica */
+  min-width: 600px;   /* imposta una larghezza minima per non comprimere troppo le colonne */
+  border-collapse: collapse;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 12px;
+}
+
+/* piccole ottimizzazioni per schermi piccoli */
+@media (max-width: 768px) {
+  .comparison-table {
+    min-width: 100%;  /* su tablet/fino a 768px occupa comunque il 100% del wrapper */
+  }
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 12px;
+  text-align: center;
+}
+
+/* testo allineato a sinistra solo nella prima colonna */
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  text-align: left;
+  color: #f6ba02;
+}
   </style>
 </head>
 <body>
@@ -403,7 +434,7 @@
       <li>✅ Lead che non verranno mai ricontattati</li>
       <li>📅 Appuntamenti che non verranno mai fissati</li>
     </ul>
-    <p>I tuoi concorrenti stanno già usando l'AI per trasformare quelle opportunità perse in contratti chiusi.</p>
+    <h2>I tuoi concorrenti stanno già usando l'AI per trasformare quelle opportunità perse in contratti chiusi.</h2>
     <p>Callistry AI non si stanca mai, non dimentica mai di richiamare e non perde mai un lead.</p>
     <ul>
       <li>✔️ Qualifica i contatti più velocemente di qualsiasi team umano</li>
@@ -433,14 +464,14 @@
       <div class="content">
         <h2>Voce Reale</h2>
         <p>Latenza impercettibile, obiezioni automatiche, integrazione CRM.</p>
-        <a href="#try">Scopri</a>
+        <a href="#">Scopri</a>
       </div>
     </div>
     <div class="box"><span></span>
       <div class="content">
         <h2>Bonus</h2>
         <p>Setup gratuito, strategia personalizzata (valore 8000€).</p>
-        <a href="#demo">Dettagli</a>
+        <a href="#">Dettagli</a>
       </div>
     </div>
   </div>
@@ -455,21 +486,21 @@
 
   <section>
   <h2>⚖️ Callistry vs Altre Soluzioni</h2>
-  <div style="overflow-x:auto">
-    <table style="width:100%; border-collapse: collapse; background-color: rgba(255,255,255,0.05); border-radius: 12px;">
-      <thead style="background-color: rgba(255,255,255,0.1);">
+  <div class="table-wrapper">
+    <table class="comparison-table">
+      <thead>
         <tr>
-          <th style="padding:12px; text-align:left; color:#f6ba02;">Caratteristiche</th>
-          <th style="padding:12px;">Callistry AI</th>
-          <th style="padding:12px;">CRM con reminder</th>
-          <th style="padding:12px;">Assistente umano</th>
-          <th style="padding:12px;">Sales Rep</th>
-          <th style="padding:12px;">AI Chatbot</th>
+          <th style="text-align:left; color:#f6ba02;">Caratteristiche</th>
+          <th>Callistry AI</th>
+          <th>CRM con reminder</th>
+          <th>Assistente umano</th>
+          <th>Sales Rep</th>
+          <th>AI Chatbot</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td style="padding:12px;">Chiamate automatiche</td>
+          <td>Chiamate automatiche</td>
           <td style="text-align:center;">✅</td>
           <td style="text-align:center;">❌</td>
           <td style="text-align:center;">❌</td>
@@ -477,7 +508,7 @@
           <td style="text-align:center;">❌</td>
         </tr>
         <tr>
-          <td style="padding:12px;">Obiezioni gestite</td>
+          <td>Obiezioni gestite</td>
           <td style="text-align:center;">✅</td>
           <td style="text-align:center;">❌</td>
           <td style="text-align:center;">❌</td>
@@ -485,7 +516,7 @@
           <td style="text-align:center;">⚠️ Solo testuali</td>
         </tr>
         <tr>
-          <td style="padding:12px;">Disponibilità 24/7</td>
+          <td>Disponibilità 24/7</td>
           <td style="text-align:center;">✅</td>
           <td style="text-align:center;">❌</td>
           <td style="text-align:center;">❌</td>
@@ -493,7 +524,7 @@
           <td style="text-align:center;">✅</td>
         </tr>
         <tr>
-          <td style="padding:12px;">Costo mensile</td>
+          <td>Costo mensile</td>
           <td style="text-align:center;">Basso, fisso</td>
           <td style="text-align:center;">Medio</td>
           <td style="text-align:center;">Alto</td>
@@ -501,7 +532,7 @@
           <td style="text-align:center;">Basso</td>
         </tr>
         <tr>
-          <td style="padding:12px;">Performance stabile</td>
+          <td>Performance stabile</td>
           <td style="text-align:center;">✅</td>
           <td style="text-align:center;">⚠️</td>
           <td style="text-align:center;">⚠️</td>
